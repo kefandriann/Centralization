@@ -18,7 +18,7 @@ import java.util.List;
 public class Ingredient {
     private Long id;
     private String name;
-    private LocalDateTime latestModification = LocalDateTime.now();
+    private LocalDateTime latestModification;
     private Unit unit;
     private List<Price> prices = new ArrayList<>();
     private List<StockMovement> stocksMovement = new ArrayList<>();

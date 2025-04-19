@@ -1,6 +1,7 @@
 package com.restaurant_management.Centralization.service;
 
 import com.restaurant_management.Centralization.controller.rest.IngredientRest;
+import io.github.cdimascio.dotenv.Dotenv;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
@@ -16,7 +17,8 @@ public class IngredientService {
     private final RestTemplate restTemplate;
 
     public List<IngredientRest> fetchIngredients(){
-        String url = "http://:8080/ingredients";
+        Dotenv dotenv = Dotenv.load();
+        String url = dotenv.get("SALES_POINT_IP")+"/ingredients";
 
         ResponseEntity<List<IngredientRest>> response = restTemplate.exchange(
                 url,

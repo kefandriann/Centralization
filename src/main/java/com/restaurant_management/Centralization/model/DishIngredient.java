@@ -1,5 +1,6 @@
 package com.restaurant_management.Centralization.model;
 
+import com.restaurant_management.Centralization.model.enums.Unit;
 import lombok.*;
 
 @AllArgsConstructor
@@ -10,8 +11,8 @@ import lombok.*;
 @Builder
 public class DishIngredient {
     private Long id;
-    private String name;
-    private Double requiredQuantity;
-    private Ingredient ingredient;
+    private Unit unit;
     private Dish dish;
+    private Ingredient ingredient;
+    private Double ingredientQuantity;
 }

@@ -15,5 +15,5 @@ import java.time.LocalDateTime;
 public class EntityStatus {
     private Long id;
     private Status status;
-    private LocalDateTime statusDate = LocalDateTime.now();
+    private LocalDateTime statusDate;
 }

@@ -1,6 +1,7 @@
 package com.restaurant_management.Centralization.service;
 
 import com.restaurant_management.Centralization.controller.rest.SaleRest;
+import io.github.cdimascio.dotenv.Dotenv;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.ParameterizedTypeReference;
@@ -17,7 +18,8 @@ public class SaleService {
     private final RestTemplate restTemplate;
 
     public List<SaleRest> fetchSales(){
-        String url = "http://:8080/sales";
+        Dotenv dotenv = Dotenv.load();
+        String url = dotenv.get("SALES_POINT_IP")+"/sales";
 
         ResponseEntity<List<SaleRest>> response = restTemplate.exchange(
                 url,

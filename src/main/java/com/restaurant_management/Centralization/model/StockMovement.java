@@ -18,7 +18,7 @@ public class StockMovement {
     @JsonIgnore
     private Ingredient ingredient;
     private StockMovementType movementType;
-    private LocalDateTime moveDate;
     private Double quantity;
     private Unit unit;
+    private LocalDateTime moveDate;
 }

@@ -17,8 +17,8 @@ import java.util.List;
 public class DishOrder{
     private Long id;
     private Dish dish;
-    private int dishQuantity;
     private Order order;
+    private Integer dishQuantity;
     private LocalDateTime dishOrderCreationDate;
     private List<DishOrderStatus> dishOrderStatus = new ArrayList<>();
 

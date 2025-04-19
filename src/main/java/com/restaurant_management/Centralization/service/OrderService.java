@@ -1,6 +1,7 @@
 package com.restaurant_management.Centralization.service;
 
 import com.restaurant_management.Centralization.controller.rest.OrderRest;
+import io.github.cdimascio.dotenv.Dotenv;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
@@ -13,7 +14,8 @@ public class OrderService {
     private final RestTemplate restTemplate;
 
     public OrderRest fetchOrder(String reference){
-        String url = "http://:8080/orders/"+reference;
+        Dotenv dotenv = Dotenv.load();
+        String url = dotenv.get("SALES_POINT_IP")+"/orders/"+reference;
 
         ResponseEntity<OrderRest> response = restTemplate.exchange(
                 url,

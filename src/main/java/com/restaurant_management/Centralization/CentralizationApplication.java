@@ -10,5 +10,4 @@ public class CentralizationApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CentralizationApplication.class, args);
 	}
-
 }

@@ -13,12 +13,12 @@ import java.util.*;
 public class Dish {
     private Long id;
     private String name;
-    private Double unitPrice = 0.0;
+    private Double unitPrice;
     private List<DishIngredient> ingredients = new ArrayList<>();
 
     public int getAvailableQuantity() {
         return ingredients.stream()
-                .map(ingredient -> ingredient.getIngredient().getAvailableQuantity() / ingredient.getRequiredQuantity())
+                .map(ingredient -> ingredient.getIngredient().getAvailableQuantity() / ingredient.getIngredientQuantity())
                 .max(Comparator.naturalOrder())
                 .orElse(0.0)
                 .intValue();
