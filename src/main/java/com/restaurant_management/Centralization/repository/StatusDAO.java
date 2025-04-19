@@ -2,7 +2,6 @@ package com.restaurant_management.Centralization.repository;
 
 import com.restaurant_management.Centralization.config.DataSource;
 import com.restaurant_management.Centralization.model.DishOrderStatus;
-import com.restaurant_management.Centralization.model.EntityStatus;
 import com.restaurant_management.Centralization.model.OrderStatus;
 import com.restaurant_management.Centralization.model.enums.Status;
 import org.springframework.stereotype.Repository;
@@ -68,10 +67,10 @@ public class StatusDAO {
         return null;
     }
 
-    public List<EntityStatus> findAllByOrderId(Long id) {
+    public List<OrderStatus> findAllByOrderId(Long id) {
         String query = "SELECT * FROM order_status WHERE order_id = ?";
         OrderDAO orderDAO = new OrderDAO();
-        List<EntityStatus> statuses = new ArrayList<>();
+        List<OrderStatus> statuses = new ArrayList<>();
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setLong(1, id);
@@ -120,7 +119,7 @@ public class StatusDAO {
 
 
     //DISH ORDERS
-    public EntityStatus findByDishOrderStatusId(Long id) {
+    public DishOrderStatus findByDishOrderStatusId(Long id) {
         String query = "SELECT * FROM dish_order_status WHERE id = ?";
         DishOrderDAO dishOrderDAO = new DishOrderDAO();
         try (Connection connection = dataSource.getConnection();

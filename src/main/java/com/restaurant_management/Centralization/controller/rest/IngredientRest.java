@@ -2,8 +2,7 @@ package com.restaurant_management.Centralization.controller.rest;
 
 import com.restaurant_management.Centralization.model.enums.StockMovementType;
 import com.restaurant_management.Centralization.model.enums.Unit;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,7 +10,11 @@ import java.util.Comparator;
 import java.util.List;
 
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
+@Setter
+@EqualsAndHashCode
+@ToString
 public class IngredientRest {
     private Long id;
     private String name;

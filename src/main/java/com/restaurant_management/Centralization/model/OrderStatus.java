@@ -6,16 +6,16 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
 @NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Getter
 @Setter
 @Data
-public class OrderStatus extends EntityStatus {
-    @JsonIgnore
+public class OrderStatus {
+    private Long id;
+    private Status status;
+    private LocalDateTime statusDate;
     private Order order;
-    public OrderStatus(Long id, Status enumStatus, LocalDateTime dateTime, Order order) {
-        super(id, enumStatus, dateTime);
-        this.order = order;
-    }
 }

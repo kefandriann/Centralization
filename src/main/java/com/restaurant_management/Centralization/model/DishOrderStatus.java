@@ -6,16 +6,16 @@ import lombok.*;
 
 import java.time.LocalDateTime;
 
-@EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode
+@ToString
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Data
-public class DishOrderStatus extends EntityStatus{
-    @JsonIgnore
+public class DishOrderStatus {
+    private Long id;
+    private Status status;
+    private LocalDateTime statusDate;
     private DishOrder dishOrder;
-    public DishOrderStatus(Long id, Status enumStatus, LocalDateTime dateTime, DishOrder dishOrder) {
-        super(id, enumStatus, dateTime);
-        this.dishOrder = dishOrder;
-    }
 }

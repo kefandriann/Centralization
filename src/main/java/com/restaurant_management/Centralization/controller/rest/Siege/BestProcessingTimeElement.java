@@ -1,14 +1,13 @@
 package com.restaurant_management.Centralization.controller.rest.Siege;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@EqualsAndHashCode
+@ToString
 public class BestProcessingTimeElement {
     private String salesPoint;
     private String dish;

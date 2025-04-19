@@ -1,13 +1,12 @@
 package com.restaurant_management.Centralization.controller.rest.Siege;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
+@EqualsAndHashCode
+@ToString
 @Setter
 public class SalesElement {
     private String salesPoint;

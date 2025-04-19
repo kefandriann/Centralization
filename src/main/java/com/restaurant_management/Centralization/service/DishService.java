@@ -19,7 +19,8 @@ public class DishService {
 
     public List<DishRest> fetchDishes(){
         Dotenv dotenv = Dotenv.load();
-        String url = dotenv.get("SALES_POINT_IP")+"/dishes";
+        String url = dotenv.get("SALES_POINT_IP");
+        url += "/dishes";
 
         ResponseEntity<List<DishRest>> response = restTemplate.exchange(
                 url,
@@ -32,7 +33,8 @@ public class DishService {
     }
 
     public List<DishOrderStatus> fetchDishOrderStatusesByDishId(Long dishId){
-        String url = "http://:8080/dishOrderStatus/"+dishId;
+        Dotenv dotenv = Dotenv.load();
+        String url = dotenv.get("SALES_POINT_IP")+"/dishOrderStatus/"+dishId;
 
         ResponseEntity<List<DishOrderStatus>> response = restTemplate.exchange(
                 url,
